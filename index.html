@@ -1,0 +1,1939 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>森宗 伶太 — Web制作 × AI</title>
+  
+  <!-- Meta Tags -->
+  <meta name="description" content="大学2年生の森宗伶太のポートフォリオサイト。Web制作とAI活用に特化し、HTML/CSS/JavaScript、C言語、GPT/Manusを使用した開発を行っています。案件依頼・相談承ります。">
+  <meta name="keywords" content="Web制作,AI活用,ポートフォリオ,森宗伶太,HTML,CSS,JavaScript,C言語,GPT,Manus,フリーランス">
+  <meta name="author" content="森宗 伶太">
+  
+  <!-- OGP Tags -->
+  <meta property="og:title" content="森宗 伶太 — Web制作 × AI">
+  <meta property="og:description" content="大学2年生の森宗伶太のポートフォリオサイト。Web制作とAI活用に特化し、HTML/CSS/JavaScript、C言語、GPT/Manusを使用した開発を行っています。案件依頼・相談承ります。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com">
+  <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="森宗 伶太 ポートフォリオ">
+  <meta property="og:locale" content="ja_JP">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="森宗 伶太 — Web制作 × AI">
+  <meta name="twitter:description" content="大学2年生の森宗伶太のポートフォリオサイト。Web制作とAI活用に特化し、HTML/CSS/JavaScript、C言語、GPT/Manusを使用した開発を行っています。">
+  <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  
+  <!-- Google Fonts with font-display: swap for better performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Feather Icons - loaded asynchronously -->
+  <script src="https://unpkg.com/feather-icons" async></script>
+
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-blue: #0b74d9;
+      --primary-blue-light: #3b8ee6;
+      --primary-blue-dark: #0a63b8;
+      --accent-orange: #ff8a3d;
+      --accent-orange-light: #ffb366;
+      --accent-green: #10b981;
+      
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-muted: #f1f5f9;
+      --bg-glass: rgba(11, 116, 217, 0.04);
+      
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      
+      --border-light: #e2e8f0;
+      --border-medium: #cbd5e1;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-full: 9999px;
+      
+      --container-max: 1200px;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+    }
+
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--spacing-lg);
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    .name {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: var(--spacing-xs);
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: block;
+      margin-top: var(--spacing-xs);
+    }
+
+    .catchphrase {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin: var(--spacing-md) 0;
+      line-height: 1.7;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--bg-glass), rgba(255, 255, 255, 0.8));
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-xl);
+      margin-bottom: var(--spacing-xl);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .hero.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .hero-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+      color: white;
+      padding: var(--spacing-xs) var(--spacing-md);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tag-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+      color: var(--primary-blue);
+    }
+
+    .social-link i {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+      flex-wrap: wrap;
+    }
+
+    /* Avatar */
+    .avatar-container {
+      text-align: center;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 4px solid white;
+      box-shadow: var(--shadow-lg);
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--bg-glass), white);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .skills-preview {
+      text-align: center;
+    }
+
+    .skills-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-xs);
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: var(--spacing-sm);
+      font-size: 0.875rem;
+    }
+
+    .skills-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+      justify-content: center;
+    }
+
+    .skill-pill {
+      background: linear-gradient(135deg, var(--bg-glass), rgba(255, 255, 255, 0.8));
+      color: var(--primary-blue);
+      padding: 4px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid var(--border-light);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.875rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary-blue);
+      border: 2px solid var(--primary-blue);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-blue);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Main Grid */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+      margin-bottom: var(--spacing-lg);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .card.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-accent {
+      background: linear-gradient(135deg, rgba(255, 138, 61, 0.05), rgba(255, 138, 61, 0.02));
+      border-color: rgba(255, 138, 61, 0.2);
+    }
+
+    .card-header {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .card-accent .card-title {
+      color: var(--accent-orange);
+    }
+
+    .card-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .card-content {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Profile Section */
+    .profile-description {
+      margin-bottom: var(--spacing-md);
+      font-size: 1rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border-light);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .section-subtitle {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .section-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: var(--spacing-md);
+    }
+
+    .skill-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: var(--spacing-sm);
+      align-items: start;
+    }
+
+    .skill-category {
+      font-weight: 600;
+      color: var(--primary-blue);
+      font-size: 0.875rem;
+    }
+
+    .skill-details {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Project Section */
+    .project-list {
+      display: grid;
+      gap: var(--spacing-md);
+    }
+
+    .project-item {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: flex-start;
+      padding: var(--spacing-md);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      transition: all 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-thumbnail {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .project-icon {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .project-description {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .project-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .project-link:hover {
+      color: var(--primary-blue);
+    }
+
+    .project-tech {
+      display: flex;
+      gap: var(--spacing-xs);
+      flex-wrap: wrap;
+      margin-top: var(--spacing-xs);
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+      color: white;
+      padding: 2px 6px;
+      border-radius: var(--radius-sm);
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    /* Hobbies Section */
+    .hobbies-description {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+    }
+
+    .hobbies-list {
+      display: grid;
+      gap: var(--spacing-md);
+    }
+
+    .hobby-item {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: flex-start;
+    }
+
+    .hobby-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-light));
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hobby-icon i {
+      width: 20px;
+      height: 20px;
+      color: white;
+    }
+
+    .hobby-title {
+      font-weight: 600;
+      color: var(--accent-orange);
+      margin-bottom: 2px;
+    }
+
+    .hobby-description {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Contact Form */
+    .contact-description {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: var(--spacing-md);
+    }
+
+    .form-group {
+      display: grid;
+      gap: var(--spacing-xs);
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: var(--text-primary);
+      font-size: 0.875rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      padding: 12px;
+      border: 2px solid var(--border-light);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: var(--spacing-xs);
+    }
+
+    /* Links Section */
+    .links-list {
+      display: grid;
+      gap: var(--spacing-sm);
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+      font-size: 0.875rem;
+    }
+
+    .link-item:hover {
+      background: var(--bg-secondary);
+      color: var(--primary-blue);
+      transform: translateX(4px);
+    }
+
+    .link-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: var(--spacing-lg) 0;
+      border-top: 1px solid var(--border-light);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .footer.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .container {
+        max-width: 100%;
+        padding: var(--spacing-md);
+      }
+      
+      .hero-content {
+        gap: var(--spacing-lg);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .main-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+      }
+      
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--spacing-lg);
+      }
+      
+      .hero-header {
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+      
+      .skill-item {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+        text-align: center;
+      }
+      
+      .skill-category {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-xs);
+      }
+      
+      .avatar {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: var(--spacing-sm);
+      }
+      
+      .hero {
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+      }
+      
+      .card {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+      }
+      
+      .hero-actions {
+        justify-content: center;
+        gap: var(--spacing-sm);
+      }
+      
+      .form-actions {
+        justify-content: center;
+        gap: var(--spacing-sm);
+      }
+      
+      .social-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .name {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        text-align: center;
+      }
+      
+      .catchphrase {
+        font-size: 1rem;
+        text-align: center;
+      }
+      
+      .project-item {
+        padding: var(--spacing-sm);
+      }
+      
+      .project-thumbnail {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .project-icon {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .hobby-item {
+        gap: var(--spacing-sm);
+      }
+      
+      .hobby-icon {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .skills-list {
+        gap: 4px;
+      }
+      
+      .skill-pill {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: var(--spacing-md);
+      }
+      
+      .card {
+        padding: var(--spacing-sm);
+      }
+      
+      .tag {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+      }
+      
+      .social-links {
+        gap: var(--spacing-sm);
+      }
+      
+      .social-link {
+        font-size: 0.75rem;
+      }
+      
+      .card-title {
+        font-size: 1.1rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1rem;
+      }
+      
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: var(--spacing-xs);
+      }
+      
+      .hero {
+        padding: var(--spacing-sm);
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+      }
+      
+      .form-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+      
+      .project-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+      }
+      
+      .project-details {
+        text-align: center;
+      }
+      
+      .hobby-item {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+      }
+      
+      .skills-grid {
+        gap: var(--spacing-sm);
+      }
+      
+      .skill-item {
+        text-align: center;
+        padding: var(--spacing-sm);
+        background: var(--bg-secondary);
+        border-radius: var(--radius-md);
+      }
+      
+      .form-input,
+      .form-textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+      }
+      
+      .name {
+        font-size: clamp(1.25rem, 6vw, 1.75rem);
+      }
+      
+      .subtitle {
+        font-size: 0.8rem;
+      }
+      
+      .catchphrase {
+        font-size: 0.9rem;
+      }
+      
+      .card-title {
+        font-size: 1rem;
+      }
+      
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+      
+      .skills-preview {
+        margin-top: var(--spacing-sm);
+      }
+      
+      .skills-title {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero {
+        padding: 12px;
+      }
+      
+      .card {
+        padding: 12px;
+      }
+      
+      .name {
+        font-size: 1.25rem;
+      }
+      
+      .tag {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+      }
+      
+      .btn {
+        padding: 12px 16px;
+        font-size: 0.8rem;
+      }
+      
+      .project-thumbnail,
+      .hobby-icon {
+        width: 30px;
+        height: 30px;
+      }
+      
+      .project-icon,
+      .hobby-icon i {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Focus styles for keyboard navigation */
+    .btn:focus,
+    .form-input:focus,
+    .form-textarea:focus,
+    .social-link:focus,
+    .link-item:focus,
+    .project-link:focus {
+      outline: 2px solid var(--primary-blue);
+      outline-offset: 2px;
+    }
+
+    /* Form Toggle Styles */
+    .form-toggle {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--border-color);
+      background: var(--card-bg);
+      color: var(--text-secondary);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .toggle-btn:hover {
+      border-color: var(--primary-blue);
+      color: var(--primary-blue);
+      transform: translateY(-2px);
+    }
+
+    .toggle-btn.active {
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      color: white;
+    }
+
+    .toggle-btn i {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Google Form Styles */
+    .google-form-container {
+      margin-top: 2rem;
+    }
+
+    .google-form-wrapper {
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+
+    .google-form-wrapper iframe {
+      display: block;
+      border: none;
+      width: 100%;
+    }
+
+    .google-form-note {
+      padding: 1rem;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .google-form-note i {
+      width: 16px;
+      height: 16px;
+      color: var(--primary-blue);
+    }
+
+    /* High DPI displays */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .avatar img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
+      /* Advanced Scroll Animations */
+    .animate-element {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .animate-element.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .animate-element.slide-up {
+      transform: translateY(50px);
+    }
+
+    .animate-element.slide-up.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .animate-element.slide-left {
+      transform: translateX(50px);
+    }
+
+    .animate-element.slide-left.fade-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .animate-element.slide-right {
+      transform: translateX(-50px);
+    }
+
+    .animate-element.slide-right.fade-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .animate-element.scale-in {
+      transform: scale(0.8);
+    }
+
+    .animate-element.scale-in.fade-in {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .animate-element.rotate-in {
+      transform: rotate(-5deg) scale(0.9);
+    }
+
+    .animate-element.rotate-in.fade-in {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    /* Stagger animation for child elements */
+    .stagger-container .animate-element {
+      transition-delay: 0s;
+    }
+
+    .stagger-container .animate-element:nth-child(1) { transition-delay: 0.1s; }
+    .stagger-container .animate-element:nth-child(2) { transition-delay: 0.2s; }
+    .stagger-container .animate-element:nth-child(3) { transition-delay: 0.3s; }
+    .stagger-container .animate-element:nth-child(4) { transition-delay: 0.4s; }
+    .stagger-container .animate-element:nth-child(5) { transition-delay: 0.5s; }
+    .stagger-container .animate-element:nth-child(6) { transition-delay: 0.6s; }
+
+    /* Parallax effect for hero section */
+    .parallax-element {
+      transition: transform 0.1s ease-out;
+    }
+
+    /* Enhanced hover effects with animations */
+    .project-item {
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .project-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(11, 116, 217, 0.15);
+    }
+
+    .skill-item {
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, var(--card-bg) 0%, rgba(11, 116, 217, 0.05) 100%);
+    }
+
+    /* Loading animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid var(--border-color);
+      border-top: 3px solid var(--primary-blue);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Landscape orientation on mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero {
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+      
+      .hero-content {
+        flex-direction: row;
+        gap: 3rem;
+      }
+      
+      .hero-left, .hero-right {
+        flex: 1;
+      }
+    }0px;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .hero-actions,
+      .form-actions,
+      .social-links {
+        display: none;
+      }
+      
+      .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+      
+      body {
+        background: white;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HERO SECTION -->
+    <header class="hero fade-in" role="banner" aria-label="自己紹介トップ">
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-header">
+            <div class="tag">
+              <i data-feather="code" class="tag-icon"></i>
+              Web制作 × AI活用
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/nekomikandayo" target="_blank" aria-label="GitHub" class="social-link">
+                <i data-feather="github"></i>
+                GitHub
+              </a>
+              <a href="https://closed-tree-846.notion.site/22a345c68bcf807e8a7bf8112063f068?source=copy_link" target="_blank" aria-label="Notion" class="social-link">
+                <i data-feather="book-open"></i>
+                Notion
+              </a>
+
+            </div>
+          </div>
+
+          <h1 class="name">
+            森宗 伶太
+            <span class="subtitle">（大学2年・情報コミュニケーション）</span>
+          </h1>
+
+          <p class="catchphrase">学んだことを、すぐカタチに。AIを使って効率よくWeb制作をしています。</p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              <i data-feather="mail" class="btn-icon"></i>
+              案件依頼・相談する
+            </a>
+            <a href="#portfolio" class="btn btn-secondary">
+              <i data-feather="folder" class="btn-icon"></i>
+              制作物を見る
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="avatar-container">
+            <div class="avatar" role="img" aria-label="プロフィール画像">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&crop=faces" alt="森宗伶太のプロフィール写真 - Web制作とAI活用を専門とする大学2年生" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="skills-preview">
+            <div class="skills-title">
+              <i data-feather="tool" class="skills-icon"></i>
+              利用可能スキル
+            </div>
+            <div class="skills-list">
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">C言語</span>
+              <span class="skill-pill">GPT / Manus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-grid">
+
+      <!-- LEFT COLUMN: Profile & Portfolio -->
+      <section class="main-content">
+        
+        <!-- Profile Section -->
+        <div class="card animate-element slide-up" id="profile">
+          <div class="card-header">
+            <h2 class="card-title animate-element fade-in">
+              <i data-feather="user" class="card-icon"></i>
+              プロフィール
+            </h2>
+          </div>
+          <div class="card-content">
+            <p class="profile-description">
+              広島工業大学 情報コミュニケーション学科の2年生です。基本情報技術者試験に合格し、HTML/CSS/JavaScriptでのWeb制作を行ってきました。最近はGPTなどのAIツールを活用して、効率的に制作を進めることに力を入れています。学んだことはすぐに試して形にするタイプで、小規模なWebサイトやアプリケーションをスピーディーに作ることが得意です。
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="skills-section">
+              <h3 class="section-subtitle">
+                <i data-feather="star" class="section-icon"></i>
+                スキル & 学習
+              </h3>
+              <div class="skills-grid stagger-container">
+                <div class="skill-item animate-element slide-left">
+                  <div class="skill-category">プログラミング</div>
+                  <div class="skill-details">C言語（基礎）・HTML/CSS/JS</div>
+                </div>
+                <div class="skill-item animate-element slide-left">
+                  <div class="skill-category">AIツール</div>
+                  <div class="skill-details">GPT（文章生成、コード支援）、Manus（レイアウト補助）</div>
+                </div>
+                <div class="skill-item animate-element slide-left">
+                  <div class="skill-category">学習</div>
+                  <div class="skill-details">Udemy「Web Developer Bootcamp」受講中・Notionで学習記録を公開</div>
+                </div>
+                <div class="skill-item animate-element slide-left">
+                  <div class="skill-category">その他</div>
+                  <div class="skill-details">基本情報技術者試験 合格</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="portfolio-section" id="portfolio">
+              <h3 class="section-subtitle">
+                <i data-feather="folder" class="section-icon"></i>
+                主なアウトプット（例）
+              </h3>
+              
+              <div class="project-list stagger-container">
+                <div class="project-item animate-element scale-in">
+                  <div class="project-thumbnail">
+                    <i data-feather="calculator" class="project-icon"></i>
+                  </div>
+                  <div class="project-details">
+                    <h4 class="project-title">
+                      <a href="calculator/index.html" target="_blank" class="project-link">
+                        Windows風 電卓アプリ（HTML/CSS/JS）
+                      </a>
+                    </h4>
+                    <p class="project-description">Windows標準の電卓を参考に作ったWebアプリです。HTML・CSS・JavaScriptで四則演算を実装し、スマホでも使いやすいレスポンシブデザインにしました。本物の電卓に近い操作感を目指して制作しています。</p>
+                    <div class="project-tech">
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-item animate-element scale-in">
+                  <div class="project-thumbnail">
+                    <i data-feather="layout" class="project-icon"></i>
+                  </div>
+                  <div class="project-details">
+                    <h4 class="project-title">自己紹介ページ（本サイト）</h4>
+                    <p class="project-description">今回制作中の自己紹介ページ。AIを使って文章とレイアウトのたたき台を作成。</p>
+                  </div>
+                </div>
+
+                <div class="project-item animate-element scale-in">
+                  <div class="project-thumbnail">
+                    <i data-feather="coffee" class="project-icon"></i>
+                  </div>
+                  <div class="project-details">
+                    <h4 class="project-title">架空カフェサイト（練習）</h4>
+                    <p class="project-description">架空案件を通じてレスポンシブデザインやフォーム実装の練習をしています。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT COLUMN: Hobbies & Contact      <!-- RIGHT COLUMN: Hobbies & Links -->
+      <aside class="sidebar">
+        
+        <!-- Hobbies Section -->
+        <div class="card hobbies-card animate-element slide-right">
+          <div class="card-header">
+            <h2 class="card-title animate-element fade-in">
+              <i data-feather="heart" class="card-icon"></i>
+              趣味・価値観
+            </h2>
+          </div>
+          <div class="card-content">
+            <p class="hobbies-description">
+              Windows標準の電卓を参考に作ったWebアプリです。HTML・CSS・JavaScriptで四則演算を実装し、スマホでも使いやすいレスポンシブデザインにしました。本物の電卓に近い操作感を目指して制作しています。
+            </p>
+
+            <div class="hobbies-list">
+              <div class="hobby-item">
+                <div class="hobby-icon">
+                  <i data-feather="book"></i>
+                </div>
+                <div class="hobby-details">
+                  <div class="hobby-title">読書・日記</div>
+                  <div class="hobby-description">学んだことはNotionで整理して公開中</div>
+                </div>
+              </div>
+
+              <div class="hobby-item">
+                <div class="hobby-icon">
+                  <i data-feather="activity"></i>
+                </div>
+                <div class="hobby-details">
+                  <div class="hobby-title">筋トレ</div>
+                  <div class="hobby-description">自己管理と継続力をアピール</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card fade-in" id="contact">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i data-feather="mail" class="card-icon"></i>
+              お問い合わせ
+            </h3>
+          </div>
+          <div class="card-content">
+            <p class="contact-description">
+              制作のご相談やお見積もりは、お気軽にどうぞ。まずは「LPを作りたい」「○ページくらいのサイト」「いつまでに欲しい」といった簡単な内容で構いません。
+            </p>
+
+              <!-- Form Toggle Buttons -->
+            <div class="form-toggle animate-element slide-up">
+              <button id="localFormBtn" class="toggle-btn active">
+                <i data-feather="edit-3"></i>
+                簡単フォーム
+              </button>
+              <button id="googleFormBtn" class="toggle-btn">
+                <i data-feather="external-link"></i>
+                Googleフォーム
+              </button>
+            </div>
+
+            <!-- Local Contact Form -->
+            <form id="contactForm" class="contact-form animate-element slide-up" role="form" aria-label="お問い合わせフォーム">
+              <div class="form-group">
+                <label for="name" class="form-label">お名前</label>
+                <input id="name" name="name" type="text" required class="form-input" aria-describedby="name-help" autocomplete="name">
+                <div id="name-help" class="sr-only">お名前を入力してください</div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">メール</label>
+                <input id="email" name="email" type="email" required class="form-input" aria-describedby="email-help" autocomplete="email">
+                <div id="email-help" class="sr-only">メールアドレスを入力してください</div>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">内容（簡単に）</label>
+                <textarea id="message" name="message" rows="4" class="form-textarea" aria-describedby="message-help">
+                </textarea>
+                <div id="message-help" class="sr-only">お問い合わせ内容を入力してください（任意）</div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  <i data-feather="send"></i>
+                  送信
+                </button>
+                <a href="mailto:mrmikan.1417@gmail.com" class="btn btn-secondary" id="mailtoFallback">
+                  <i data-feather="mail"></i>
+                  直接メール
+                </a>
+              </div>
+            </form>
+
+            <!-- Google Form Embed -->
+            <div id="googleFormContainer" class="google-form-container animate-element slide-up" style="display: none;">
+              <div class="google-form-wrapper">
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSdummy_form_id/viewform?embedded=true" 
+                  width="100%" 
+                  height="600" 
+                  frameborder="0" 
+                  marginheight="0" 
+                  marginwidth="0"
+                  title="お問い合わせフォーム（Google Forms）">
+                  読み込んでいます…
+                </iframe>
+                <p class="google-form-note">
+                  <i data-feather="info"></i>
+                  より詳細なお問い合わせには上記のGoogleフォームをご利用ください。
+                </p>
+              </div>
+            </div>            </div>
+
+              <p id="formNote" class="form-note">
+                ※ 送信ボタンを押すと、入力内容が反映されたメールアプリが開きます
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="card fade-in">
+          <div class="card-header">
+            <h4 class="card-title">
+              <i data-feather="link" class="card-icon"></i>
+              すぐ見せられるリンク
+            </h4>
+          </div>
+          <div class="card-content">
+            <div class="links-list">
+              <a href="https://github.com/nekomikandayo" target="_blank" class="link-item">
+                <i data-feather="github" class="link-icon"></i>
+                GitHub — /nekomikandayo
+              </a>
+              <a href="https://closed-tree-846.notion.site/22a345c68bcf807e8a7bf8112063f068?source=copy_link" target="_blank" class="link-item">
+                <i data-feather="book-open" class="link-icon"></i>
+                Notion — 学習記録
+              </a>
+              <a href="#" class="link-item">
+                <i data-feather="folder" class="link-icon"></i>
+                ポートフォリオ（作成中）
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer fade-in">
+      <div class="footer-content">
+        <p class="footer-text">
+          © <span id="year"></span> 森宗 伶太 — Web制作 × AI活用 · 基本情報技術者（取得済）
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Feather Icons when available
+      if (typeof feather !== 'undefined') {
+        feather.replace();
+      } else {
+        // Retry after a short delay if feather is not loaded yet
+        setTimeout(function() {
+          if (typeof feather !== 'undefined') {
+            feather.replace();
+          }
+        }, 100);
+      }
+
+      // Set current year in footer
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with fade-in class
+      const fadeElements = document.querySelectorAll('.fade-in');
+      fadeElements.forEach(el => {
+        observer.observe(el);
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Advanced Animation System
+      const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const element = entry.target;
+            
+            // Add a small delay for better visual effect
+            setTimeout(() => {
+              element.classList.add('fade-in');
+            }, 100);
+            
+            // Handle stagger animations
+            if (element.parentElement.classList.contains('stagger-container')) {
+              const siblings = Array.from(element.parentElement.children);
+              const index = siblings.indexOf(element);
+              element.style.transitionDelay = `${index * 0.1}s`;
+            }
+            
+            animationObserver.unobserve(element);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all animation elements
+      const animateElements = document.querySelectorAll('.animate-element');
+      animateElements.forEach(el => {
+        animationObserver.observe(el);
+      });
+
+      // Parallax effect for hero section
+      let ticking = false;
+      
+      function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax-element');
+        
+        parallaxElements.forEach(element => {
+          const speed = element.dataset.speed || 0.5;
+          const yPos = -(scrolled * speed);
+          element.style.transform = `translateY(${yPos}px)`;
+        });
+        
+        ticking = false;
+      }
+
+      function requestParallaxUpdate() {
+        if (!ticking) {
+          requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', requestParallaxUpdate);
+
+      // Form toggle functionality
+      const localFormBtn = document.getElementById('localFormBtn');
+      const googleFormBtn = document.getElementById('googleFormBtn');
+      const contactForm = document.getElementById('contactForm');
+      const googleFormContainer = document.getElementById('googleFormContainer');
+
+      localFormBtn.addEventListener('click', () => {
+        localFormBtn.classList.add('active');
+        googleFormBtn.classList.remove('active');
+        contactForm.style.display = 'block';
+        googleFormContainer.style.display = 'none';
+      });
+
+      googleFormBtn.addEventListener('click', () => {
+        googleFormBtn.classList.add('active');
+        localFormBtn.classList.remove('active');
+        contactForm.style.display = 'none';
+        googleFormContainer.style.display = 'block';
+      });
+
+      // Enhanced hover effects
+      const projectItems = document.querySelectorAll('.project-item');
+      projectItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          item.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        item.addEventListener('mouseleave', () => {
+          item.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Contact form handling
+      const form = document.getElementById('contactForm');
+      const mailtoFallback = document.getElementById('mailtoFallback');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Validation
+      if (!name || !email) {
+        showNotification('お名前とメールアドレスを入力してください。', 'error');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showNotification('有効なメールアドレスを入力してください。', 'error');
+        return;
+      }
+
+      // Create mailto link
+      const subject = encodeURIComponent(`案件相談・お問い合わせ — ${name}`);
+      const bodyLines = [
+        `お名前: ${name}`,
+        `メール: ${email}`,
+        '',
+        '内容:',
+        message || '(未記入)',
+        '',
+        '---',
+        'このメールは自己紹介ページのフォームから作成されました。'
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      const mailto = `mailto:mrmikan.1417@gmail.com?subject=${subject}&body=${body}`;
+
+      // Open mailto link
+      window.location.href = mailto;
+      
+      // Show success message
+      showNotification('メールアプリが開きます。送信をお願いします。', 'success');
+      
+      // Reset form after a delay
+      setTimeout(() => {
+        form.reset();
+      }, 1000);
+    });
+
+    // Email validation function
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      // Remove existing notifications
+      const existingNotifications = document.querySelectorAll('.notification');
+      existingNotifications.forEach(notification => notification.remove());
+
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `
+        <div class="notification-content">
+          <i data-feather="${type === 'error' ? 'alert-circle' : type === 'success' ? 'check-circle' : 'info'}"></i>
+          <span>${message}</span>
+        </div>
+      `;
+
+      // Add styles
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'error' ? '#fee2e2' : type === 'success' ? '#dcfce7' : '#dbeafe'};
+        color: ${type === 'error' ? '#dc2626' : type === 'success' ? '#16a34a' : '#2563eb'};
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border: 1px solid ${type === 'error' ? '#fecaca' : type === 'success' ? '#bbf7d0' : '#bfdbfe'};
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+      `;
+
+      notification.querySelector('.notification-content').style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+      `;
+
+      // Add to document
+      document.body.appendChild(notification);
+      
+      // Replace feather icons
+      feather.replace();
+
+      // Animate in
+      setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+      }, 100);
+
+      // Auto remove after 5 seconds
+      setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.remove();
+          }
+        }, 300);
+      }, 5000);
+    }
+
+    // Add hover effects to project items
+    document.addEventListener('DOMContentLoaded', () => {
+      const projectItems = document.querySelectorAll('.project-item');
+      projectItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-4px)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+    });
+
+    // Add parallax effect to hero section
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        const rate = scrolled * -0.5;
+        hero.style.transform = `translateY(${rate}px)`;
+      }
+    });
+
+    // Add typing animation to catchphrase
+    function typeWriter(element, text, speed = 50) {
+      let i = 0;
+      element.innerHTML = '';
+      
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        }
+      }
+      
+      type();
+    }
+
+    // Initialize typing animation when hero is visible
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const catchphrase = entry.target.querySelector('.catchphrase');
+          if (catchphrase && !catchphrase.dataset.typed) {
+            const originalText = catchphrase.textContent;
+            setTimeout(() => {
+              typeWriter(catchphrase, originalText, 30);
+              catchphrase.dataset.typed = 'true';
+            }, 1000);
+          }
+          heroObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        heroObserver.observe(hero);
+      }
+    });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+          document.body.style.opacity = '1';
+        }, 100);
+      });
+
+      // Keyboard navigation improvements
+      document.addEventListener('keydown', function(e) {
+        // Add visual focus indicators for keyboard users
+        if (e.key === 'Tab') {
+          document.body.classList.add('keyboard-navigation');
+        }
+      });
+
+      document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-navigation');
+      });
+
+      // Add CSS for keyboard navigation
+      const keyboardStyles = document.createElement('style');
+      keyboardStyles.textContent = `
+        .keyboard-navigation *:focus {
+          outline: 2px solid var(--primary-blue) !important;
+          outline-offset: 2px !important;
+        }
+      `;
+      document.head.appendChild(keyboardStyles);
+    }); // Close DOMContentLoaded event listener
+  </script>
+</body>
+</html>
